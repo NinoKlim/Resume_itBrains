@@ -1,0 +1,30 @@
+<div>
+    {{#with main}}
+    <main>
+        <section>
+            {{>title data="Work history" big=true}}
+            <div>
+                <ul>
+
+                    {{#each work}}
+                    <li>
+                        <div>{{position}}</div>
+                        <br>
+                        <div>{{duration.from}} - {{#if duration.to}} {{duration.to}} {{else}} (still working) {{/if}}
+                        </div> <br>
+                        <div>
+                            {{#if company.url}}
+                            {{>link text=company.name href=company.url noLine=true}}
+                            {{else}}
+                            <b>{{company.name}}</b>
+                            {{/if}}
+                        </div>
+                        <br>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+    </main>
+    {{/with}}
+</div>
