@@ -271,7 +271,7 @@ router.get('/projects', function (req, res) {
               name: 'WEATHER project React was created in avril 2023',
             },
             {
-              name: 'Weather project React was created in avril 2023',
+              name: 'WEATHER project React was created in avril 2023',
             },
           ],
           stackAmount: 6,
