@@ -1,0 +1,139 @@
+<div>
+    <main>
+        {{>title data=name big=true}}
+        {{>title data=occupation}}
+        <table cellspacing="10">
+            <tr>
+                <th>
+                    Born:
+                </th>
+                <td>
+                    {{birthdate}}, {{birthplace}}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Died:
+                </th>
+                <td>
+                    {{deathdate}}, {{deathplace}}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Citizenship:
+                </th>
+                <td>
+                    {{nationality}}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Education:
+                </th>
+                {{#with education.[0]}}
+                <td>
+                    <div>{{degree}} / {{field}}</div>
+                    <div>{{institution}} ({{year}})</div>
+                </td>
+                {{/with}}
+            </tr>
+            <tr>
+                <th>
+                    Known for:
+                </th>
+                <td>
+                    {{#each known_for}}
+                    <div>
+                        {{this}}
+                    </div>
+                    {{/each}}
+                </td>
+            </tr>
+        </table>
+        <h3>
+            Publications:
+        </h3>
+        <ul>
+            {{#each notable_publications}}
+            <li>
+                {{title}} ({{year}})
+                via <em> {{publisher}} </em>
+            </li>
+            <br>
+            {{/each}}
+        </ul>
+        <h3>
+            Private life:
+        </h3>
+        <ul type="none">
+            {{#each partners}}
+            <li>
+                {{name}}, {{relationship}}
+                <div>{{years}}</div>
+            </li>
+            <br>
+            {{/each}}
+        </ul>
+        <h3>Awards and honors</h3>
+        {{#with awards.[0]}}
+        <div>
+            Einstein received {{title}} in {{year}}. He was
+            {{description}}.
+        </div>
+        {{/with}}
+        <br>
+        <table cellspacing="10">
+            <tr>
+                <th>Influences</th>
+                <th>Influenced</th>
+            </tr>
+            <tr>
+                <td>
+                    {{#each influences}}
+                    <ul>
+                        <li>
+                            {{this}}
+                        </li>
+                    </ul>
+                    {{/each}}
+                </td>
+                <td>
+                    {{#each influenced}}
+                    <ul>
+                        <li>
+                            {{this}}
+                        </li>
+                    </ul>
+                    {{/each}}
+                </td>
+            </tr>
+        </table>
+        <div>
+            <h3>Quotes:</h3>
+            {{#each quotes}}
+            <ul type="none">
+                <li>
+                    <q>{{this}}</q>
+                </li>
+            </ul>
+            {{/each}}
+        </div>
+        <div>
+            <h3>Discoveries and {{contributions.title}}.</h3>
+            {{#with major_discoveries.[0]}}
+            <p>Albert Einstein discovered the law of the {{title}} in {{year}}. {{description}}
+                <br>
+            </p>
+            {{/with}}
+        </div>
+        {{#with contributions }}
+        <div>
+            <em>{{field}}</em> <br>
+            <del>
+                In {{year}} {{description}}
+            </del>
+            {{/with}}
+        </div>
+    </main>
+</div>
