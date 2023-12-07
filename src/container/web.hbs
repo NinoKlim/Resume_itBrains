@@ -1,0 +1,66 @@
+<main>
+    <section>
+        {{#each web.languages}}
+        <div>
+            {{>title data=name big=true}}
+            <h2>
+                Version: {{version}}
+            </h2>
+            <p>
+                {{description}}
+            </p>
+            {{>title data="Elements:"}}
+            <ul>
+                {{#each elements}}
+                <li>
+                    <dfn> {{name}}</dfn>
+                    <br> {{description}}
+                </li>
+                Attributes:
+                {{#each attributes}}
+                <ul>
+                    <li>{{name}} - {{description}}</li>
+                </ul>
+                {{/each}}
+                {{/each}}
+            </ul>
+
+            {{#each properties}}
+            <ul>
+                <li>
+                    <dfn> {{name}}</dfn>
+                    <br> {{description}}
+                </li>
+                Values:
+                {{#each values}}
+                <ul>
+                    <li>{{value}} - {{description}}</li>
+                </ul>
+                {{/each}}
+            </ul>
+            {{/each}}
+
+            {{#each functions}}
+            <ul>
+                <li>
+                    <dfn> {{name}} </dfn>
+                    <br> {{description}}
+
+                </li>
+                <div>
+                    Parameters:
+                </div>
+                {{#each parameters}}
+                <ul>
+                    <li>
+                        {{name}} ({{type}}) - {{description}}
+                    </li>
+                </ul>
+                {{/each}}
+            </ul>
+            {{/each}}
+        </div>
+        <hr>
+        {{/each}}
+    </section>
+</main>
