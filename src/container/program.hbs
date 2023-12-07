@@ -1,0 +1,95 @@
+<div>
+    <main>
+        <header>
+            {{#with program.excursion}}
+            <h3>
+                <time>{{date}}</time>
+            </h3>
+            <h1>{{name}}</h1>
+            <h2>
+                {{location.city}} , {{location.country}}
+            </h2>
+        </header>
+        <hr>
+        <section>
+            <ol>
+                <div>
+                    {{#with program.[0]}}
+                    <li>
+                        <strong style="text-transform: uppercase">
+                            {{type}}: {{name}}
+                            <div style="text-transform: lowercase">
+                                {{duration}} hours
+                            </div>
+                        </strong>
+                        {{#with details.museum}}
+                        <p>
+                            <b>
+                                Location: {{name}}
+                            </b>
+                        <address>{{location.address}}, {{location.city}}, {{location.country}}</address>
+                        </p>
+                        <ul>
+                            {{#each exhibits}}
+                            <li>Name: {{name}}</li>
+                            {{#if artist}} <li>Artist: {{artist}}</li> {{/if}}
+                            <li>Description: {{description}}</li>
+                            {{#if audio_guide}}
+                            <li>Audio-guide: YES</li>
+                            {{/if}}
+                            <br><br>
+                            {{/each}}
+                        </ul>
+                        {{/with}}
+                        {{#with details.guide}}
+                        <div>
+                            Guide: {{name}} ({{rating}}/5)
+                            <br>
+                            Language: {{language}}
+                            <br>
+                        </div>
+                        {{/with}}
+                    </li>
+                    {{/with}}
+                </div>
+                <br>
+                <div>
+                    {{#with program.[1]}}
+                    <li>
+                        <strong style="text-transform: uppercase">
+                            {{type}}: {{name}}
+                            <div style="text-transform: lowercase">
+                                {{duration}} hours
+                            </div>
+                        </strong>
+                        {{#with details.venue}}
+                        <p>
+                            <b>
+                                Location: {{name}}
+                            </b>
+                        <address>{{location.address}}, {{location.city}}, {{location.country}}</address>
+                        </p>
+                        {{/with}}
+                        <ol type="I">
+                            {{#each details.performers }}
+                            <li>{{name}} <br> {{type}}</li>
+                            <br>
+                            {{/each}}
+                        </ol>
+                        {{#with details.guide}}
+                        <div>
+                            Guide: {{name}} ({{rating}}/5)
+                            <br>
+                            Language: {{language}}
+                            <br>
+                        </div>
+                        {{/with}}
+                    </li>
+                    {{/with}}
+                </div>
+            </ol>
+            {{/with}}
+        </section>
+        <hr>
+    </main>
+</div>
