@@ -1,11 +1,46 @@
-<nav>
-    {{>link href="/skills" text="Skills" line=true}}
-    {{>link href="/summary" text="Summary" line=true}}
-    {{>link href="/education" text="Education" line=true}}
-    {{>link href="/work" text="Work" line=true}}
-    {{>link href='/projects' text="Projects" line=true}}
+{{!-- <nav> --}}
+    {{!-- {{>link href="/skills" text="Skills" line=true}} --}}
+    {{!-- {{>link href="/summary" text="Summary" line=true}} --}}
+    {{!-- {{>link href="/education" text="Education" line=true}} --}}
+    {{!-- {{>link href="/work" text="Work" line=true}} --}}
+    {{!-- {{>link href='/projects' text="Projects" line=true}}
     {{>link href='/program' text="Program" line=true}}
     {{>link href='/bio' text="Bio" line=true}}
-    {{>link href='/person' text="Person" line=true}}
+    {{>link href='/person' text="Person" line=true}} --}}
 
+    {{!-- </nav> --}}
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Resume</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/summary">Summary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/work">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/program">Program</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/bio">Bio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/person">Person</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
