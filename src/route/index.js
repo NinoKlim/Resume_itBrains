@@ -772,10 +772,10 @@ router.get('/js', function (req, res) {
       'Object',
     ],
     syntax: {
-      variables: ['var', 'let', 'const'],
+      variables: ['var,', 'let,', 'const'],
       functions: ['function'],
-      conditionals: ['if', 'else', 'switch'],
-      loops: ['for', 'while', 'do-while'],
+      conditionals: ['if,', 'else,', 'switch'],
+      loops: ['for,', 'while,', 'do-while'],
       classes: ['class'],
     },
     features: [

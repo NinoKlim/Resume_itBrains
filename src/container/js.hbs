@@ -1,9 +1,108 @@
 <div>
     <main>
         <section>
-            <h1>
-                hello!
-            </h1>
+            {{>title data=name big=true}}
+            <dfn>{{description}}</dfn>
+            <p>Founded by <b>{{history.founder}}</b> in <b>{{history.year}}</b>
+            </p>
+            <div>
+                <h4 class="my-4">Types:</h4>
+                <ol class="list-group list-group-flush list-group-numbered">
+                    {{#each types}}
+                    <li class="list-group-item">{{this}}</li>
+                    {{/each}}
+                </ol>
+            </div>
+            <div>
+                <h4 class="my-4">Syntax:</h4>
+                {{#with syntax}}
+                <ol class="list-group list-group-flush list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between aligh-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Variables </div>
+                            {{#each variables}}
+                            {{this}}
+                            {{/each}}
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between aligh-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Functions</div>
+                            {{#each functions}}
+                            {{this}}
+                            {{/each}}
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between aligh-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Conditionals</div>
+                            {{#each conditionals}}
+                            {{this}}
+                            {{/each}}
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between aligh-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Loops</div>
+                            {{#each loops}}
+                            {{this}}
+                            {{/each}}
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between aligh-content-start">
+                        <div class=" ms-2 me-auto">
+                            <div class="fw-bold">Classes</div>
+                            {{#each classes}}
+                            {{this}}
+                            {{/each}}
+                        </div>
+                    </li>
+                </ol>
+                {{/with}}
+            </div>
+            <div>
+                <h4 class="my-4">Features</h4>
+                <ol class="list-group list-group-flush list-group-numbered">
+                    {{#each features}}
+                    <li class="list-group-item">
+                        {{this}}
+                    </li>
+                    {{/each}}
+                </ol>
+            </div>
+            <div>
+                <h4 class="my-4">Libraries</h4>
+                <ol class="list-group list-group-flush list-group-numbered">
+                    {{#each libraries}}
+                    <li class="list-group-item">{{this}}</li>
+                    {{/each}}
+                </ol>
+            </div>
+            <div>
+                <h4 class="my-4">Tools</h4>
+                <ol class="list-group list-group-flush list-group-numbered">
+                    {{#each tools}}
+                    <li class="list-group-item">{{this}}</li>
+                    {{/each}}
+                </ol>
+            </div>
+            <h4 class="my-4">Communities:</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each community}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{type}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
         </section>
     </main>
 </div>
