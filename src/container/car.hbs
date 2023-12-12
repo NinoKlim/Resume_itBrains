@@ -1,0 +1,372 @@
+<div>
+    <main>
+        <section>
+            <div>
+                <table class="table table-striped border">
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="text-center">
+                                <h1>{{make}} {{model}}</h1>
+                                <h4 class="text-uppercase">{{year}}, {{color}}</h4>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#with features}}
+                        <tr>
+                            <th colspan="2" class="text-center">
+                                SALON
+                            </th>
+                        </tr>
+                        {{#with interior}}
+                        {{#with seats}}
+                        <tr>
+                            <td>
+                                Material
+                            </td>
+                            <td>
+                                {{material}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Color
+                            </td>
+                            <td>
+                                {{color}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Heating
+                            </td>
+                            <td>
+                                {{#if heated}}+{{else}}-{{/if}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Ventilation
+                            </td>
+                            <td>{{#if ventilated}}+{{else}}-{{/if}}</td>
+                        </tr>
+                        {{/with}}
+                        <tr>
+                            <th colspan="2">
+                                Dashboard
+                            </th>
+                        </tr>
+                        {{#with dashboard}}
+                        <tr>
+                            <td>
+                                Material
+                            </td>
+                            <td>
+                                {{material}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Color
+                            </td>
+                            <td>
+                                {{color}}
+                            </td>
+                        </tr>
+                        {{#with display}}
+                        <tr>
+                            <th colspan="2">
+                                Display
+                            </th>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                Type
+                            </td>
+                            <td>
+                                {{type}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Size
+                            </td>
+                            <td>
+                                {{size}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Resolution
+                            </td>
+                            <td>
+                                {{resolution}}
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                Touchscreen
+                            </td>
+                            <td>
+                                {{#if touchscreen}}+{{else}}-{{/if}}
+                            </td>
+                        </tr>
+                        {{/with}}
+                        {{/with}}
+                        {{#with audio}}
+                        <tr>
+                            <th colspan="2">
+                                Audio
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                System
+                            </td>
+                            <td>{{system}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Speakers
+                            </td>
+                            <td>
+                                {{speakers}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Subwoofer</td>
+                            <td>{{#if subwoofer}}+{{else}}-{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Bluetooth
+                            </td>
+                            <td>{{#if bluetooth}}+{{else}}-{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <td>USB</td>
+                            <td>{{#if USB}}+{{else}}-{{/if}}</td>
+                        </tr>
+                        {{/with}}
+                        {{/with}}
+                        <tr>
+                            <th colspan="2" class="text-center text-uppercase">
+                                Exterior
+                            </th>
+                        </tr>
+                        {{#with exterior}}
+                        {{#with wheels}}
+                        <tr>
+                            <td>
+                                Size
+                            </td>
+                            <td>{{size}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Type
+                            </td>
+                            <td>
+                                {{type}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>{{color}}</td>
+                        </tr>
+                        {{/with}}
+                        {{#with headlights}}
+                        <tr>
+                            <th colspan="2">
+                                Headlights
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>{{type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Brightness</td>
+                            <td>{{brightness}}</td>
+                        </tr>
+                        <tr>
+                            <td>Automatic</td>
+                            <td>{{#if automatic}}+{{else}}-{{/if}}</td>
+                        </tr>
+                        {{/with}}
+                        {{#with sunroof}}
+                        <tr>
+                            <th colspan="2">Sunroof</th>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>{{type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Size</td>
+                            <td>{{size}}</td>
+                        </tr>
+                        <tr>
+                            <td>Automatic</td>
+                            <td>{{#if automatic}}+{{else}}-{{/if}}</td>
+                        </tr>
+                        {{/with}}
+                        {{/with}}
+                        {{#with safety.airbags}}
+                        <tr>
+                            <th colspan="2" class="text-uppercase text-center">safety</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Airbags</th>
+                        </tr>
+                        <tr>
+                            <td>Front</td>
+                            <td>{{front}}</td>
+                        </tr>
+                        <tr>
+                            <td>Side</td>
+                            <td>{{side}}</td>
+                        </tr>
+                        <tr>
+                            <td>Knee</td>
+                            <td>{{knee}}</td>
+                        </tr>
+                        {{/with}}
+                        {{#with safety.assistance}}
+                        <tr>
+                            <td>
+                                Blind spot monitoring
+                            </td>
+                            <td>
+                                {{#if blind_spot_monitoring}}+{{else}}-{{/if}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Rear cross traffic alert
+                            </td>
+                            <td>
+                                {{#if rear_cross_traffic_alert}}+{{else}}-{{/if}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Lane Departure Warning
+                            </td>
+                            <td>
+                                {{#if lane_departure_warning}}+{{else}}-{{/if}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Adaptive Cruise Control
+                            </td>
+                            <td>
+                                {{#if adaptive_cruise_control}}+{{else}}-{{/if}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Collision warning
+                            </td>
+                            <td>
+                                {{#if collision_warning}}+{{else}}-{{/if}}
+                            </td>
+                        </tr>
+                        {{/with}}
+                        {{/with}}
+                        {{#with engine}}
+                        <tr>
+                            <th colspan="2" class="text-center text-uppercase">
+                                Engine
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>{{type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Displacement</td>
+                            <td>{{displacement}}</td>
+                        </tr>
+                        <tr>
+                            <td>Horsepower</td>
+                            <td>{{horsepower}}</td>
+                        </tr>
+                        <tr>
+                            <td>Torque</td>
+                            <td>{{torque}}</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Transmission</th>
+                        </tr>
+                        {{#with transmission}}
+                        <tr>
+                            <td>Type</td>
+                            <td>{{type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gears</td>
+                            <td>{{gears}}</td>
+                        </tr>
+                        {{/with}}
+                        {{/with}}
+                        {{#with fuel_economy}}
+                        <tr>
+                            <th colspan="2">Fuel economy</th>
+                        </tr>
+                        <tr>
+                            <td>City</td>
+                            <td>{{city}}</td>
+                        </tr>
+                        <tr>
+                            <td>Highway</td>
+                            <td>{{highway}}</td>
+                        </tr>
+                        <tr>
+                            <td>Combined</td>
+                            <td>{{combined}}</td>
+                        </tr>
+                        {{/with}}
+                        {{#with price}}
+                        <tr>
+                            <th colspan="2" class="text-center text-uppercase">Price</th>
+                        </tr>
+                        <tr>
+                            <td>Base</td>
+                            <td>{{base}}</td>
+                        </tr>
+                        <tr>
+                            <td>Destination</td>
+                            <td>{{destination}}</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Options</th>
+                        </tr>
+                        {{#with options}}
+                        <tr>
+                            <td>Navigation</td>
+                            <td>{{navigation}}</td>
+                        </tr>
+                        <tr>
+                            <td>Moonroof</td>
+                            <td>{{moonroof}}</td>
+                        </tr>
+                        <tr>
+                            <td>Premium paint</td>
+                            <td>{{premium_paint}}</td>
+                        </tr>
+                        {{/with}}
+                        <tr>
+                            <th class="text-end text-uppercase">total:</th>
+                            <th>{{total}}</th>
+                        </tr>
+                        {{/with}}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
