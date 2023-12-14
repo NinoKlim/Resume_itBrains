@@ -1,0 +1,101 @@
+<div>
+    <header>
+        {{>title data=name bbig=true}}
+    </header>
+
+    <div class="container ms-4">
+        {{#each users}}
+        <div class="row fw-semibold p-3">
+            <div class="col-sm-6 border-bottom border-info pb-3">
+                User
+            </div>
+            <div class="col-6 border-bottom border-info">Friends</div>
+        </div>
+        <div class="row p-3">
+            <div class="col-sm-6 d-flex align-items-center border-bottom border-info">
+                <div>
+                    <span class="badge bg-secondary">{{id}}</span>
+                    {{name}}, {{age}} y.o.
+                    <div>{{gender}}</div>
+                </div>
+            </div>
+            <div class="col-md-6 border-bottom border-info">
+                <div class="row py-2">
+                    {{#each friends}}
+                    <div class="col-sm-12">
+                        <span class="badge bg-secondary">{{id}}</span>
+                        {{name}}, {{age}} y.o.
+                        <div class="ps-4">{{gender}}</div>
+                    </div>
+                    {{#each mutual_friends}}
+                    <div class="row py-2 ps-5">
+                        <div class="col-sm-12">
+                            <div><span class="badge bg-secondary">{{id}} </span> {{name}}, {{age}} y.o.</div>
+                            <div class="ps-4">{{gender}}</div>
+                        </div>
+                        <div class="row">
+                            {{#each mutual_friends}}
+                            <div class="col-sm-12 ps-5 py-2">
+                                <div><span class="badge bg-secondary">{{id}} </span> {{name}}, {{age}} y.o.</div>
+                                <div class="ps-4">{{gender}}</div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/each}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class="row p-3">
+            <div class="col-6 fw-semibold border-bottom border-info pb-3">Groups</div>
+            <div class="col-6 fw-semibold border-bottom border-info pb-3 ">Members</div>
+        </div>
+        {{!-- {{#each friends}} --}}
+        {{#each groups}}
+        <div class="row p-3">
+            <div class="col-6">
+                <div>
+                    <span class="badge bg-secondary">{{id}}</span> {{name}}
+                </div>
+                <div class="fst-italic py-2">{{description}}</div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    {{#each members}}
+                    <div class="col-sm-12">
+                        <div><span class="badge bg-secondary">{{id}}</span> {{name}}, {{age}} y.o.z</div>
+                    </div>
+                    <div class="ps-4">{{gender}}</div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{#each friends}}
+        {{#each groups}}
+        <div class="row p-3">
+            <div class="col-6">
+                <div>
+                    <span class="badge bg-secondary">{{id}}</span> {{name}}
+                </div>
+                <div class="fst-italic py-2">{{description}}</div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    {{#each members}}
+                    <div class="col-sm-12">
+                        <div><span class="badge bg-secondary">{{id}}</span> {{name}}, {{age}} y.o.z</div>
+                    </div>
+                    <div class="ps-4">{{gender}}</div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/each}}
+        {{!-- {{/each}} --}}
+        {{/each}}
+    </div>
+
+</div>
