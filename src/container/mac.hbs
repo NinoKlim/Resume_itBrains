@@ -1,0 +1,140 @@
+<div>
+    <main>
+        <header>
+            <h1> {{name}} <span class="badge text-bg-warning ms-4">{{price}}</span></h1>
+            <dfn>{{description}}</dfn>
+        </header>
+        <section class="ms-3">
+            <div>
+                <table class="table table-borderless">
+                    <thead>
+                        <th colspan="2">Features</th>
+                    </thead>
+                    {{#with features}}
+                    <tbody>
+                        {{#with processor}}
+                        <tr>
+                            <th colspan="2">Processor</th>
+                        </tr>
+                        <tr>
+                            <td class="col-5">
+                                Processor
+                            </td>
+                            <td>{{brand}} {{model}} ({{speed}}), {{cache}}</td>
+                        </tr>
+                        {{/with}}
+                        <tr>
+                            <td>Operatingsystem</td>
+                            <td>{{operating_system}}</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Display</th>
+                        </tr>
+                        {{#with display}}
+                        <tr>
+                            <td> Size </td>
+                            <td>{{size}}</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>{{technology}}</td>
+                        </tr>
+                        <tr>
+                            <td>Resolution</td>
+                            <td>{{resolution}}</td>
+                        </tr>
+                        <tr>
+                            <td>Refresh rate</td>
+                            <td>{{refresh_rate}}</td>
+                        </tr>
+                        <tr>
+                            <td>Color space/brightness</td>
+                            <td>{{color_space}}/{{brightness}}</td>
+                        </tr>
+                        {{/with}}
+                        <tr>
+                            <th colspan="">Memory</th>
+                        </tr>
+                        {{#with memory}}
+                        <tr>
+                            <td>Type</td>
+                            <td>{{type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Size</td>
+                            <td>{{size}}</td>
+                        </tr>
+                        <tr>
+                            <td>Speed</td>
+                            <td>{{speed}}</td>
+                        </tr>
+                        {{/with}}
+                        <tr>
+                            <th>Storage</th>
+                        </tr>
+                        {{#with storage}}
+                        <tr>
+                            <td>Type</td>
+                            <td>{{type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Size</td>
+                            <td>{{size}}</td>
+                        </tr>
+                        {{/with}}
+                        <tr>
+                            <th colspan="2">Graphics</th>
+                        </tr>
+                        {{#with graphics}}
+                        <tr>
+                            <td>Graphics</td>
+                            <td>{{brand}} {{model}}, {{memory}}</td>
+                        </tr>
+                        {{/with}}
+                        <tr>
+                            <th>Case</th>
+                        </tr>
+                        {{#with battery}}
+                        <tr>
+                            <td>Battery</td>
+                            <td>{{type}} {{capacity}} ({{life}})</td>
+                        </tr>
+                        {{/with}}
+                        <tr>
+                            <td>Weight</td>
+                            <td>{{weight}}</td>
+                        </tr>
+                        {{#with dimensions}}
+                        <tr>
+                            <td>Dimensions</td>
+                            <td>{{height}}x{{width}}x{{depth}}</td>
+                        </tr>
+                        {{/with}}
+                        {{#with ports.[0]}}
+                        <tr>
+                            <td>Ports</td>
+                            <td>{{count}}x{{type}}, {{#with features}} {{this}} {{/with}}
+                            </td>
+                        </tr>
+                        {{/with}}
+                        <tr>
+                            <th colspan="2">Accessories</th>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">Accessories</td>
+                            {{#each accessories}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>{{price}}</td>
+                        </tr>
+                        {{/each}}
+                        </tr>
+
+                    </tbody>
+                    {{/with}}
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
