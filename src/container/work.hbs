@@ -1,11 +1,10 @@
 <div>
-    {{#with main}}
     <main>
+        {{#with main}}
         <section>
             {{>title data="Work history" big=true}}
             <div>
                 <ul>
-
                     {{#each work}}
                     <li>
                         <div>{{position}}</div>
@@ -25,6 +24,59 @@
                 </ul>
             </div>
         </section>
+        <hr>
+        <section>
+            {{>title data="My projects" big=true}}
+            <ul>
+                {{#each projects}}
+                <li>
+                    <div>
+                        {{>link text="GitHub" href=github noLine=true blank=true}}
+                    </div>
+                    <div>
+                        {{>title data=name}}
+                    </div>
+                    <div>
+                        <p>
+                            {{about}}
+                        </p>
+                    </div>
+                    <div>
+                        <em>
+                            Project stacks ({{stackAmount}})
+                        </em>
+                    </div>
+                    <br>
+                    <div>
+                        <ul>
+                            {{#each stacks}}
+                            <li>
+                                {{name}}
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <br>
+                    <div>
+                        <em>
+                            Project awards
+                        </em>
+                    </div>
+                    <br>
+                    <div>
+                        <ul>
+                            {{#each awards}}
+                            <li>
+                                {{name}}
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <br>
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+        {{/with}}
     </main>
-    {{/with}}
 </div>
