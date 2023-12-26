@@ -1,0 +1,276 @@
+<div class="container my-4 border rounded">
+    {{#with navigation}}
+    <nav class="border-bottom pb-3">
+        <div class="row">
+            {{#each links }}
+            <div class="col-2">
+                <a href="{{href}}">{{text}}</a>
+            </div>
+            {{/each}}
+            {{#with button}}
+            <div class="col-auto">
+                <a role="button" href={{href}} target="_blank" class="btn btn-primary">{{text}}</a>
+            </div>
+            {{/with}}
+        </div>
+    </nav>
+    {{/with}}
+    {{#with header}}
+    <header class="py-5 border-bottom">
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+        {{#with button}}
+        <a href={{link}} role="button" class="btn btn-primary">{{text}}</a>
+        {{/with}}
+    </header>
+    {{/with}}
+    {{#with city}}
+    <section class="border-bottom mb-3">
+        <h1 class="pb-4">{{title}}</h1>
+        <div class="row gy-2">
+            {{#each cards}}
+            <div class="col-5 d-flex ">
+                <div class="card align-self-stretch">
+                    {{#with picture}}
+                    <img src={{src}} alt={{alt}}>
+                    {{/with}}
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{title}}</h5>
+                        <p>{{description}}</p>
+                        {{#with button}}
+                        <a href={{href}} class="btn btn-primary align-self-start mt-auto" role="button">{{text}}</a>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/with}}
+    {{#with winner}}
+    <section class="border-bottom mb-3">
+        <h2 class="pb-3">{{title}}</h2>
+        {{#with table}}
+        <table class="table border-top">
+            <thead>
+                <tr>
+                    {{#each head}}
+                    <th scope="col" class="text-capitalize">{{this}}</th>
+                    {{/each}}
+                </tr>
+            </thead>
+            {{#each user}}
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        {{place}}
+                    </th>
+                    <td>{{name}}</td>
+                    <td>{{surname}}</td>
+                    <td>{{nickname}}</td>
+                </tr>
+            </tbody>
+            {{/each}}
+        </table>
+        {{/with}}
+    </section>
+    {{/with}}
+    {{#with gallery}}
+    <section class="border-bottom mb-3">
+        <h2 class="pb-3">{{title}}</h2>
+        <div class="row row-cols-3">
+            {{#each cards}}
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">{{name}}</div>
+                    <ul class="list-group list-group-flush">
+                        {{#each items}}
+                        <li class="list-group-item">{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/with}}
+    {{#with relaxion}}
+    <section class="border-bottom mb-3">
+        <div class="display-3 mb-3">{{title}}</div>
+        <div class="row gx-2 gy-4">
+            {{#each cards}}
+            <div class="col-5 d-flex">
+                <div class="card bg-secondary text-white align-self-strech">
+                    <div class="card-header">
+                        {{header}}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+                        <p class="card-text">{{description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/with}}
+    {{#with rest}}
+    <section class="border-bottom mb-3">
+        <div class="row row-cols-1 row-cols-md-2 gy-2">
+            {{#each cards}}
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-header">
+                        {{header}}
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">{{title}}</h6>
+                        <div class="card-text">{{description}}</div>
+                        <button type="button" class="btn btn-primary my-3">{{button}}</button>
+                    </div>
+                    <div class="card-footer">{{footer}}</div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/with}}
+    {{#with proposition}}
+    <section class="border-bottom mb-3">
+        <div class="display-2 mb-2">{{title}}</div>
+        <div class="row gx-2 gy-2">
+            {{#each card}}
+            <div class="col-md-5">
+                <div class="card bg-warning text-white">
+                    <div class="card-header">{{header}}</div>
+                    <div class="card-body">
+                        <h6 class="card-title">{{title}}</h6>
+                        <div class="card-text">{{description}}</div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/with}}
+    {{#with footer}}
+    <h5 class="m-3">{{title}}</h5>
+    <footer>
+        <div class="row">
+            <div class="col-4">
+                {{#each navigation}}
+                <div class="row">
+                    <div class="col-12 gy-3">
+                        <a href={{href}}>{{text}}</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <div class="col-4">
+                {{#each socialMedia}}
+                <div class="row">
+                    <div class="col-12 gy-3">
+                        <a href={{link}} class="btn btn-outline-dark flex-fill btn-sm" role="button">{{name}}</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <div class="col-4">
+                {{#each partners}}
+                <div class="row">
+                    <div class="col-12 gy-3">
+                        <a href={{link}} class="btn btn-outline-info flex-fill btn-sm" role="button">{{name}}</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </footer>
+
+    {{/with}}
+</div>
+
+
+{{!-- <div class="container">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <div class="col">
+            <div class="p-3 border bg-light">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">Row column</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+    <div class="row">
+        <div class="col-md-8">.col-md-8</div>
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    </div>
+
+    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+    <div class="row">
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    </div>
+
+    <!-- Columns are always 50% wide, on mobile and desktop -->
+    <div class="row">
+        <div class="col-6">.col-6</div>
+        <div class="col-6">.col-6</div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row row-cols-4">
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+        <div class="col-5">Column</div>
+        <div class="col">Column</div>
+    </div>
+</div>
+<br>
+<br> --}}
+
+{{!-- <div class="container">
+    <div class="row row-cols-2 row-cols-lg-3">
+        <div class="col border">Column</div>
+        <div class="col border">Column</div>
+        <div class="col border">Column</div>
+        <div class="col border">Column</div>
+        <div class="col border">Column</div>
+        <div class="col border">Column</div>
+        <div class="col-4 col-lg-2 border">Column</div>
+        <div class="col-4 col-lg-2 border">Column</div>
+        <div class="col-4 col-lg-2 border">Column</div>
+        <div class="col-4 col-lg-2 border">Column</div>
+        <div class="col-4 col-lg-2 border">Column</div>
+        <div class="col-4 col-lg-2 border">Column</div>
+    </div>
+</div> --}}
