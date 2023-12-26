@@ -828,7 +828,6 @@ router.get('/js', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-
 router.get('/mac', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -915,7 +914,6 @@ router.get('/mac', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
 
 router.get('/car', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -1015,7 +1013,6 @@ router.get('/car', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 // ================================================================
-
 
 router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -1174,4 +1171,7 @@ router.get('/facebook', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+// ================================================================
 
+// Підключаємо роутер до бек-енду
+module.exports = router
