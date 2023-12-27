@@ -1,0 +1,114 @@
+{{#with navigation.links}}
+<nav>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href={{[0].href}}>{{[0].text}}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href={{[1].href}}>{{[1].text}}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href={{[2].href}}>{{[2].text}}</a>
+        </li>
+    </ul>
+</nav>
+{{/with}}
+{{#with newsBlock}}
+<main class="p-3 pt-5">
+    <h1 class="text-center pb-4">{{title}}</h1>
+    <div class="container">
+        <div class="row">
+            {{#each cards}}
+            <div class="col-6 col-lg-3 d-flex">
+                <div class="card text-white bg-dark mb-3 aligh-self-strech">
+                    <div class="card-header">{{title}}
+                        {{#if isTop}}
+                        <span class="badge bg-danger text-white ms-2">Top</span>
+                        {{/if}}
+                        {{#if isNew}}
+                        <span class="badge bg-success text-white">New</span>
+                        {{/if}}
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</main>
+{{/with}}
+<hr>
+{{#with goodsBlock}}
+<nav>
+    <ul class="nav nav-tabs">
+        {{#each tabs}}
+        <li class="nav-item">
+            <a href="#" class="nav-link {{#if isActive}} active {{/if}} {{#if isDisabled}} disabled {{/if}}">
+                {{text}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</nav>
+<div class="container">
+    <div class="row">
+        {{#each cards}}
+        <div class="col-md-4 col-6 g-3 d-flex">
+            <div class="card aligh-0self-strech">
+                <img src={{image}} alt="image" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}
+                        {{#if isHot}}
+                        <span class="ms-2 badge bg-warning text-white">HOT!</span>
+                        {{/if}}
+                        {{#if isNew}}
+                        <span class="ms-2 badge bg-primary text-white">New</span>
+                        {{/if}}
+                    </h5>
+                    <p class="card-text">{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/with}}
+<hr>
+{{#with subscribe}}
+<div class="my-5 alert bg-dark text-white" role="alert">
+    <h2 class="alert-heading">{{header}}</h2>
+    <p>{{description}}</p>
+    {{#each buttons}}
+    <div class="mb-3">
+        <a href={{link}} class="btn btn-primary" role="button">{{text}}</a>
+    </div>
+    {{/each}}
+</div>
+{{/with}}
+<hr>
+{{#with service}}
+<div class="my-5 alert bg-success text-white text-center">
+    <h2 class="alert-heading">{{title}}</h2>
+    <p>{{description}}</p>
+    {{#with buttons.[0]}}
+    <a href={{link}} class="btn btn-primary" role="button">{{text}}</a>
+    {{/with}}
+</div>
+{{/with}}
+<hr>
+<div class="container">
+    <div class="row">
+        {{#each footer}}
+        <div class="col-2">
+            <ul class="nav flex-column">
+                {{#each this}}
+                <li class="nav-item">
+                    <a href={{link}} class="nav-link {{#if @last}} disable {{/if}}">{{text}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+    </div>
+</div>
