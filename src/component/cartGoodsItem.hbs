@@ -1,0 +1,36 @@
+{{#each data1}}
+<div class="container">
+    <div class="row border p-2 rounded my-3">
+        <div class="col-5">
+            <div class="card border-0">
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src="{{image}}" alt="samsung" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body ps-0">
+                            <h5 class="card-title">{{name}}</h5>
+                            <p class="card-text"> <small>{{description}} </small> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 my-auto">
+            <div class="d-flex justify-content-center">
+                {{#with price}}
+                <div class="lh-lg">{{title}}
+                    <h4>{{value}}</h4>
+                </div>
+                {{/with}}
+            </div>
+        </div>
+        <div class="col-1 my-auto">
+            {{amount}}
+        </div>
+        <div class="col-3 my-auto">
+            {{>goodsButtons data1=buttons}}
+        </div>
+    </div>
+</div>
+{{/each}}
