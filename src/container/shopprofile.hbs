@@ -1,0 +1,146 @@
+<nav class="mb-5">
+    {{#with navigation}}
+    <ul class="nav border rounded">
+        {{#each links}}
+        <li class="nav-item">
+            <a href="href" class="nav-link {{#if @last}} disabled {{/if}}">{{text}}</a>
+        </li>
+        {{/each}}
+    </ul>
+    {{/with}}
+</nav>
+<div class="container">
+    <main class="mb-5">
+        <section class="my-5">
+            <div class="my-3">
+                {{>title data=header big=true}}
+            </div>
+            {{#with purchase}}
+            <div>
+                <ul class="nav nav-tabs my-4">
+                    {{#each tabs}}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link {{#if @first}} active {{/if}}" {{#if @first}}aria-current="page"
+                            {{/if}}>{{this}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{#with actionBlock}}
+                <div class="row">
+                    <div class="col-4">
+                        {{#with input}}
+                        <input type="text" class="form-control" placeholder="{{placeholder}}">
+                        {{/with}}
+                    </div>
+                    <div class="col-8">
+                        {{#each buttons}}
+                        {{>linkButtons}}
+                        {{/each}}
+                    </div>
+                </div>
+                {{/with}}
+                <hr class="border border-1 border-dark">
+                {{#each itemList}}
+                {{>purchaseItem}}
+                <hr>
+                {{/each}}
+            </div>
+            {{/with}}
+        </section>
+        <hr class="border border-1 border-dark">
+        {{#with userInfo}}
+        <section class="mt-5">
+            <div class="mb-5">
+                {{>title data=title big=true}}
+            </div>
+            <div class="border rounded pt-3 px-3">
+                {{#with profileData}}
+                {{>title data=title}}
+                <div class="ms-2">
+                    <div class="row my-3 border rounded p-3">
+                        {{#each fullName}}
+                        <div class="col-4 lh-lg">
+                            {{title}}
+                            <div><strong>{{value}}</strong></div>
+                        </div>
+                        {{/each}}
+                    </div>
+                    <div class="row my-3 border rounded p-3">
+                        {{#each otherInfo}}
+                        <div class="col-4 lh-lg">{{title}}
+                            <div>{{value}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/with}}
+                    <div class="row my-3 border rounded p-3">
+                        {{#each buttons}}
+                        <div class="col-4">
+                            {{>linkButtons}}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="my-2 p-3 border rounded">
+            {{#with recipients}}
+            <div>{{>title data=title}}</div>
+            <div class="row">
+                {{#each users}}
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> {{name}}</h5>
+                            <p class="card-text">{{phone}}</p>
+                            {{#with button}}
+                            {{>linkButtons}}
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/with}}
+        </section>
+        <section class="my-2 p-3 border rounded">
+            {{#with contacts}}
+            {{>title data= title big=true}}
+            <div class="row">
+                {{#each contactData}}
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">{{title}}</p>
+                            <h5 class="card-title"> {{value}} </h5>
+                            <div class="my-3">
+                                {{#with button}}
+                                {{>linkButtons}}
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/with}}
+        </section>
+        {{/with}}
+    </main>
+    <hr>
+    <footer class="my-5">
+        <div class="row">
+            {{#each footer}}
+            <div class="col-2">
+                <ul class="nav flex-column">
+                    {{#each this}}
+                    <li class="nav-item">
+                        <a href="{{link}}" class="nav-link {{#if @last}}disabled {{/if}}">{{text}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+    </footer>
+</div>
