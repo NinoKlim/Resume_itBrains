@@ -1,0 +1,87 @@
+<nav>
+    {{#with nigation}}
+    <ul class="nav">
+        {{#each links}}
+        <li class="nav-item">
+            <a href={{href}} class="nav-link {{#if @last}} disabled {{/if}}">{{text}}</a>
+        </li>
+        {{/each}}
+    </ul>
+    {{/with}}
+</nav>
+
+<header class="my-5">
+    {{#with header}}
+    {{>title data=title}}
+    {{#with button}}
+    <a href={{link}} class="btn btn-outline-secondary my-2">{{text}}</a>
+    {{/with}}
+    {{/with}}
+</header>
+<hr>
+<section class="my-5">
+    {{>cartGoodsItem data1=goodsBlock}}
+</section>
+<hr>
+<section class="my-5">
+    {{#with total}}
+    {{>title data=title}}
+    <p class="display-5"><strong>{{amount}}</strong></p>
+    <p>{{delivery}}</p>
+    {{>goodsButtons data1=buttons}}
+    {{/with}}
+</section>
+<hr>
+<section class="my-5">
+    {{#with goodsOtherBlock}}
+    <div class="text-center">
+        {{>title data=title}}
+    </div>
+    <div class="row my-4">
+        {{#each cards}}
+        <div class="col-6 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{image}}" alt="product-picture" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}
+                        {{#if isHot}}
+                        <span class="badge bg-warning">HOT!</span>
+                        {{/if}}
+                        {{#if idNew}}
+                        <span class="badge bg-danger">New!</span>
+                        {{/if}}
+                    </h5>
+                    <p class="card-text">{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+</section>
+<hr>
+<section class="my-5">
+    {{#with subscribe}}
+    <div class="alert bg-black text-white" role="alert">
+        <h2 class="alert-heading">{{header}}</h2>
+        <p>{{description}}</p>
+        {{>goodsButtons data1=buttons}}
+    </div>
+    {{/with}}
+</section>
+<hr>
+<section class="my-5">
+    <div class="row">
+        {{#each footer}}
+        <div class="col-2">
+            <ul class="nav flex-column">
+                {{#each this}}
+                <li value="nav-item">
+                    <a href="{{link}}" class="nav-link {{#if @last}} disabled {{/if}}">{{text}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+    </div>
+</section>
