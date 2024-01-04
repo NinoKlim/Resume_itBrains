@@ -1,0 +1,139 @@
+<nav class="mb-5">
+    {{#with navigation}}
+    <ul class="nav border rounded">
+        {{#each links}}
+        <li class="nav-item ">
+            <a href="{{href}}" class="nav-link {{#if @last}} disabled {{/if}}">{{text}}</a>
+        </li>
+        {{/each}}
+    </ul>
+    {{/with}}
+</nav>
+
+<nav aria-label="breadcrumb" class="mb-5">
+    <ol class="breadcrumb ">
+        {{#each breadcrumb}}
+        {{#if url}}
+        <li class="breadcrumb-item"> <a href="{{href}}">{{name}}</a></li>
+        {{else}}
+        <li class="breadcrumb-item active" aria-label="page">{{name}}</li>
+        {{/if}}
+        {{/each}}
+    </ol>
+</nav>
+
+<header class="mb-3">{{>title data=header big=true}}</header>
+
+<container class="mb-5">
+    <div class="row mb-5">
+        {{#each sortBlock}}
+        <div class="col-3">
+            <select class="form-select" aria-label="goods select form" name="" id="">
+                {{#each options}}
+                <option value="{{value}}">{{text}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{/each}}
+    </div>
+    <section class="mb-5">
+        <div class="row mx-0">
+            {{#with filterBlock}}
+            <div class="col-4 border rounded p-2 lh-lg">
+                <div>
+                    {{#with sellers}}
+                    <div class="pb-2">
+                        {{title}}
+                    </div>
+                    {{#each list}}
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sellerCheck">
+                        <label for="sellerCheck" class="form-check-label">{{value}}</label>
+                    </div>
+                    {{/each}}
+                    {{/with}}
+                </div>
+                <hr>
+                <div>
+                    {{#with brands}}
+                    <label class="pb-2 form-label">
+                        {{title}}
+                    </label>
+                    {{#with input}}
+                    <input class="form-control mb-4" type="text" placeholder="{{placeholder}}">
+                    {{/with}}
+                    {{#each options}}
+                    <div class="form-check">
+                        <input type="checkbox" name="" id="brandCheck" class="form-check-input">
+                        <label for="brandCheck" class="form-check-label">{{value}}</label>
+                    </div>
+                    {{/each}}
+                    {{/with}}
+                </div>
+                <hr>
+                <div>
+                    {{#with price}}
+                    <label class="pb-2 form-label">
+                        {{title}}
+                    </label>
+                    {{#with range}}
+                    <input type="text" class="form-control mb-3" placeholder="{{from}}">
+                    <input type="text" class="form-control mb-3" placeholder="{{to}}" name="" id="">
+                    {{/with}}
+                    {{#with button}}
+                    {{>linkButtons}}
+                    {{/with}}
+                </div>
+                {{/with}}
+                <div>
+                    {{#each filterList}}
+                    <hr>
+                    <div class="mb-2">{{title}}</div>
+                    {{#each options}}
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="" id="filterCheck">
+                        <label for="filterCheck" class="form-check-label">{{value}}</label>
+                    </div>
+                    {{/each}}
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+            <div class="col-8">
+                <div class="row">
+                    {{#each goodsList}}
+                    <div class="col-6 d-flex mb-3">
+                        {{>catalogItem}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </section>
+    <div class="text-center bg-success text-white p-2 border rounded mb-5">
+        {{#with service}}
+        {{>title data=title}}
+        <p>{{description}}</p>
+        {{#each buttons}}
+        {{>linkButtons}}
+        {{/each}}
+        {{/with}}
+    </div>
+    <hr>
+    <footer class="my-5">
+        <div class="row">
+            {{#each footer}}
+            <div class="col-2">
+                <ul class="nav flex-column">
+                    {{#each this}}
+                    <li class="nav-item">
+                        <a href="{{link}}" class="nav-link {{#if @last}}disabled {{/if}}">{{text}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+    </footer>
+</container>

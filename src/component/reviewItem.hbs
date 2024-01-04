@@ -1,0 +1,54 @@
+<div class="mb-5 border rounded p-3">
+    <div class="border rounded-top p-2">
+        {{#with title}}
+        <h5>{{userName}}</h5>
+        <p>{{caption}}</p>
+        <p>{{date}}</p>
+        {{/with}}
+    </div>
+    {{#with reviewBody}}
+    <div class="border rounded-bottom p-2">
+        {{#with seller}}
+        {{title}}: {{value}}
+        {{/with}}
+        <div class="py-3">
+            {{#with rating}}
+            {{title}}: {{value}}
+            {{/with}}
+        </div>
+        <div class="py-3">
+            {{#each text}}
+            <p>{{this}}</p>
+            {{/each}}
+        </div>
+        <div>
+            {{#with advantages}}
+            <h5>{{title}}:</h5>
+            <p>{{text}}</p>
+            {{/with}}
+        </div>
+        <div>
+            {{#with disadvantages}}
+            <h5>{{title}}</h5>
+            <p>{{text}}</p>
+            {{/with}}
+        </div>
+        <div>
+            {{#each images}}
+            <img src="{{this}}" alt="photo" class="rounded me-2">
+            {{/each}}
+        </div>
+    </div>
+    <div class="ms-5">
+        {{#each coments}}
+        <div class="card my-4">
+            <div class="card-body">
+                <h5 class="card-title mb-3">{{userName}}</h5>
+                <h6 class="card-subtitle mb-2">{{date}}</h6>
+                <p class="card-text">{{text}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+</div>
