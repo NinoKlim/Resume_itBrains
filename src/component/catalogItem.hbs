@@ -1,0 +1,35 @@
+<div class="card align-self-strech">
+    <img src="{{img}}" class="card-img-top mb-2" alt="product Photo">
+    <div class="card-body">
+        <div class="row mb-3">
+            <div class="col-2 me-2">
+                {{>badge dataHot=isHot}}
+            </div>
+            <div class="col-2">
+                {{>badge dataNew=isNew}}
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col">{{>badge dataFast=isFast}}</div>
+        </div>
+        <div class="row">
+            <div class="col">{{>badge dataFree=isFree}}</div>
+        </div>
+        {{#with review}}
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">{{amount}} {{text}}</p>
+        {{/with}}
+        <h4 class="card-title">{{price}}</h4>
+        <p class="card-text">{{delivery}}</p>
+        {{#each buttons}}
+        <div class="mb-3">
+            {{>linkButtons}}
+        </div>
+        {{/each}}
+        <ul class="mb-2 lh-lg">
+            {{#each characteristics}}
+            <li class="border-0">{{title}}: {{value}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
