@@ -1,0 +1,19 @@
+{{#each data1}}
+<div class="my-2">
+    <button class="btn 
+        {{#if isPrimary}}
+        btn-primary
+        {{else if isDanger}}
+        btn-danger
+         {{else if isSecondary}}
+        btn-secondary
+         {{else if isSuccess}}
+        btn-success 
+         {{else if isDangerOutl}}
+        btn-outline-danger
+        {{else if isSuccessOutl}}
+        btn-outline-success
+        {{/if}}
+        mb-2">{{text}}</button>
+</div>
+{{/each}}
