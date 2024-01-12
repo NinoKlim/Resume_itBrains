@@ -1,129 +1,130 @@
 <div>
-    <main>
+    <div class="container">
         {{>title data=name big=true}}
-        {{>title data=occupation}}
-        <table cellspacing="10">
-            <tr>
-                <th>
-                    Born:
-                </th>
-                <td>
-                    {{birthdate}}, {{birthplace}}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Died:
-                </th>
-                <td>
-                    {{deathdate}}, {{deathplace}}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Citizenship:
-                </th>
-                <td>
-                    {{nationality}}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Education:
-                </th>
-                {{#with education.[0]}}
-                <td>
-                    <div>{{degree}} / {{field}}</div>
-                    <div>{{institution}} ({{year}})</div>
-                </td>
-                {{/with}}
-            </tr>
-            <tr>
-                <th>
-                    Known for:
-                </th>
-                <td>
-                    {{#each known_for}}
-                    <div>
-                        {{this}}
-                    </div>
-                    {{/each}}
-                </td>
-            </tr>
-        </table>
+        <div class="row mb-3">
+            {{>title data=occupation}}
+        </div>
+        <div class="row">
+            <div class="col-2 fw-bold">
+                Born:
+            </div>
+            <div class="col-8">
+                {{birthdate}}, {{birthplace}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 fw-bold">
+                Died:
+            </div>
+            <div class="col-8">
+                {{deathdate}}, {{deathplace}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 fw-bold">
+                Citizenship:
+            </div>
+            <div class="col-8">
+                {{nationality}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 fw-bold">
+                Education:
+            </div>
+            {{#with education.[0]}}
+            <div class="col-8">
+                <div>{{degree}} / {{field}}</div>
+                <div>{{institution}} ({{year}})</div>
+            </div>
+            {{/with}}
+        </div>
+        <div class="row">
+            <div class="col-2 fw-bold">
+                Known for:
+            </div>
+            <div class="col-8">
+                {{#each known_for}}
+                <div>
+                    {{this}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
         <h3>
             Publications:
         </h3>
-        <ul>
+        <ul class="list-group">
             {{#each notable_publications}}
-            <li>
+            <li class="list-group-item border-0">
                 {{title}} ({{year}})
                 via <em> {{publisher}} </em>
             </li>
-            <br>
             {{/each}}
         </ul>
         <h3>
             Private life:
         </h3>
-        <ul type="none">
+        <ul class="list-group">
             {{#each partners}}
-            <li>
+            <li class="list-group-item border-0">
                 {{name}}, {{relationship}}
                 <div>{{years}}</div>
             </li>
-            <br>
             {{/each}}
         </ul>
-        <h3>Awards and honors</h3>
+        <div class="row">
+            <h3>Awards and honors</h3>
+        </div>
         {{#with awards.[0]}}
-        <div>
+        <div class="row mb-3">
             Einstein received {{title}} in {{year}}. He was
             {{description}}.
         </div>
         {{/with}}
-        <br>
-        <table cellspacing="10">
-            <tr>
-                <th>Influences</th>
-                <th>Influenced</th>
-            </tr>
-            <tr>
-                <td>
-                    {{#each influences}}
-                    <ul>
-                        <li>
-                            {{this}}
-                        </li>
-                    </ul>
-                    {{/each}}
-                </td>
-                <td>
-                    {{#each influenced}}
-                    <ul>
-                        <li>
-                            {{this}}
-                        </li>
-                    </ul>
-                    {{/each}}
-                </td>
-            </tr>
+        <table class="table">
+            <thead class="table-light">
+                <th scope="col">Influences</th>
+                <th scope="col">Influenced</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {{#each influences}}
+                        <ul class="list-group">
+                            <li class="list-group-item border-0">
+                                {{this}}
+                            </li>
+                        </ul>
+                        {{/each}}
+                    </td>
+                    <td>
+                        {{#each influenced}}
+                        <ul class="list-group">
+                            <li class="list-group-item border-0">
+                                {{this}}
+                            </li>
+                        </ul>
+                        {{/each}}
+                    </td>
+                </tr>
+            </tbody>
         </table>
-        <div>
+        <div class="row">
             <h3>Quotes:</h3>
             {{#each quotes}}
-            <ul type="none">
-                <li>
+            <ul class="list-group">
+                <li class="list-group-item border-0">
                     <q>{{this}}</q>
                 </li>
             </ul>
             {{/each}}
         </div>
-        <div>
+        <div class="row">
             <h3>Discoveries and {{contributions.title}}.</h3>
             {{#with major_discoveries.[0]}}
-            <p>Albert Einstein discovered the law of the {{title}} in {{year}}. {{description}}
-                <br>
+            <p class="mb-2">Albert Einstein discovered the law of the {{title}} in {{year}}. {{description}}
             </p>
             {{/with}}
         </div>
@@ -135,5 +136,5 @@
             </del>
             {{/with}}
         </div>
-    </main>
+    </div>
 </div>

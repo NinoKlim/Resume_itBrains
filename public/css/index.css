@@ -17,3 +17,7 @@ nav {
 section {
   padding: 16px;
 }
+
+.indexList > li {
+  margin-bottom: 10px;
+}

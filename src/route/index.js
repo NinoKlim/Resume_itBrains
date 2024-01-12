@@ -39,7 +39,9 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -49,6 +51,7 @@ router.get('/', function (req, res) {
 router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
+    layout: 'basic',
     page: {
       title: ' Resume ',
     },
@@ -74,6 +77,7 @@ router.get('/summary', function (req, res) {
 
 router.get('/skills', function (req, res) {
   res.render('skills', {
+    layout: 'basic',
     page: {
       title: ' Resume | Skills',
     },
@@ -134,6 +138,7 @@ router.get('/skills', function (req, res) {
 
 router.get('/education', function (req, res) {
   res.render('education', {
+    layout: 'basic',
     page: {
       title: 'Resume | Education ',
     },
@@ -177,7 +182,7 @@ router.get('/education', function (req, res) {
 
 router.get('/work', function (req, res) {
   res.render('work', {
-    layout: 'big',
+    layout: 'basic',
     page: {
       title: 'Resume | Work',
     },
@@ -207,77 +212,6 @@ router.get('/work', function (req, res) {
           },
         },
       ],
-      projects: [
-        {
-          name: 'Weather project',
-          github:
-            'https://github.com/NinoKlim/Vanilla-weather',
-          about:
-            'Web-page allows to find out the weather in your current location by IP-address and in other countries by API request (openweathermap).',
-          stacks: [
-            {
-              name: 'HTML / CSS',
-            },
-            {
-              name: 'JavaScript',
-            },
-            {
-              name: 'BOOTSTRAB',
-            },
-          ],
-          awards: [
-            {
-              name: 'Weather web-page was created in december 2022',
-            },
-            {
-              name: 'Weather web-page was created in december 2022',
-            },
-          ],
-          stackAmount: 4,
-          awardAmount: 5,
-        },
-        {
-          name: 'Weather project React',
-          github:
-            'https://github.com/wecodeschool/react-weather',
-          about:
-            'Web-page allows to find out the weather in your current location by IP-address and in other countries by API request (openweathermap).',
-          stacks: [
-            {
-              name: 'HTML / CSS',
-            },
-            {
-              name: 'React.js',
-            },
-            {
-              name: 'BOOTSTRAB',
-            },
-          ],
-          awards: [
-            {
-              name: 'WEATHER project React was created in avril 2023',
-            },
-            {
-              name: 'WEATHER project React was created in avril 2023',
-            },
-          ],
-          stackAmount: 6,
-          awardAmount: 5,
-        },
-      ],
-    },
-    footer,
-  })
-})
-
-router.get('/projects', function (req, res) {
-  res.render('projects', {
-    layout: 'big',
-    page: {
-      title: 'Resume | Projects',
-    },
-    header,
-    main: {
       projects: [
         {
           name: 'Weather project',

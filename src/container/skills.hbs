@@ -1,34 +1,42 @@
 <div>
     <main>
         {{#with main}}
-        <section>
-            {{>title data="Strong skills" big=true}}
-            <ul>
-                {{#each skills}}
-                <li>
-                    {{name}}
-                    {{#if point includeZero=true}} ({{point}}) {{/if}}
-                    {{#if isTop}} (TOP) {{/if}}
-                    {{#unless point}}
-                    {{#if point includeZero=true}}
-                    (In the process of learning)
-                    {{/if}} {{/unless}}
-                    {{#unless point includeZero=true}} (not studied){{/unless}}
-                </li>
-                {{/each}}
-            </ul>
-        </section>
-        <section>
-            {{>title data="My hobbies"}}
-            <ol>
-                {{#each hobbies}}
-                <li>
-                    {{name}}
-                    {{#if isMain}}(Favorite) {{/if}}
-                </li>
-                {{/each}}
-            </ol>
-        </section>
+
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-4">
+                    {{>title data="Strong skills" big=true}}
+                    <ul class="list-group list-group-flush">
+                        {{#each skills}}
+                        <li class="list-group-item">
+                            {{name}}
+                            {{#if point includeZero=true}} ({{point}}) {{/if}}
+                            {{#if isTop}} (TOP) {{/if}}
+                            {{#unless point}}
+                            {{#if point includeZero=true}}
+                            (In the process of learning)
+                            {{/if}} {{/unless}}
+                            {{#unless point includeZero=true}} (not studied){{/unless}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    {{>title data="My hobbies"}}
+                    <ul class="list-group list-group-flush list-group-numbered">
+                        {{#each hobbies}}
+                        <li class="list-group-item">
+                            {{name}}
+                            {{#if isMain}}(Favorite) {{/if}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
         {{/with}}
     </main>
 </div>
