@@ -1,25 +1,29 @@
 <div>
     {{#with main}}
-    <main>
-        <section>
-            {{>title data="My education" big=true}}
-            <ul>
-                {{#each educations}}
-                <li>{{name}} {{year}}</li>
-                {{#unless isEnd}} (In the process of learning) {{/unless}}
-                {{/each}}
-            </ul>
-        </section>
-        <section>
-            {{>title data="My certificates"}}
-            <ul>
-                {{#each certificates}}
-                <li>
-                    {{name}} ({{id}})
-                </li>
-                {{/each}}
-            </ul>
-        </section>
-    </main>
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-4">
+                {{>title data="My education" big=true}}
+                <ul class="list-group">
+                    {{#each educations}}
+                    <li class="list-group-item">{{name}} {{year}} {{#unless isEnd}}
+                        (In the process of learning) {{/unless}} </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                {{>title data="My certificates"}}
+                <ul class="list-group">
+                    {{#each certificates}}
+                    <li class="list-group-item">
+                        {{name}} ({{id}})
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
     {{/with}}
 </div>

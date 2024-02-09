@@ -10,48 +10,54 @@
                 {{description}}
             </p>
             {{>title data="Elements:"}}
-            <ul>
+            <ul class="list-group">
                 {{#each elements}}
-                <li>
+                <li class="list-group-item border-0">
                     <dfn> {{name}}</dfn>
-                    <br> {{description}}
-                </li>
+                    <div>
+                        {{description}}
+                    </div>
+                </li class="list-group-item border-0">
                 Attributes:
                 {{#each attributes}}
-                <ul>
-                    <li>{{name}} - {{description}}</li>
+                <ul class="list-group">
+                    <li class="list-group-item border-0">{{name}} - {{description}}</li>
                 </ul>
                 {{/each}}
                 {{/each}}
             </ul>
 
             {{#each properties}}
-            <ul>
-                <li>
+            <ul class="list-group">
+                <li class="list-group-item border-0">
                     <dfn> {{name}}</dfn>
-                    <br> {{description}}
+                    <div>
+                        {{description}}
+                    </div>
                 </li>
                 Values:
                 {{#each values}}
-                <ul>
-                    <li>{{value}} - {{description}}</li>
+                <ul class="list-gtoup">
+                    <li class="list-group-item border-0">{{value}} - {{description}}</li>
                 </ul>
                 {{/each}}
             </ul>
             {{/each}}
 
             {{#each functions}}
-            <ul>
-                <li>
+            <ul class="list-group">
+                <li class="list-group-item border-0">
                     <dfn> {{name}} </dfn>
-                    <br> {{description}}
+                    <div>
+                        {{description}}
+                    </div>
                 </li>
                 <div>
                     Parameters:
                 </div>
                 {{#each parameters}}
-                <ul>
-                    <li>
+                <ul class="list-group">
+                    <li class="list-group-item border-0">
                         {{name}} ({{type}}) - {{description}}
                     </li>
                 </ul>

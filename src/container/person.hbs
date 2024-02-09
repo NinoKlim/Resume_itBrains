@@ -2,12 +2,10 @@
     <main>
         {{#with person}}
         <section>
-            <div>
+            <div class="mb-3">
                 {{>title big=true data=name}}
             </div>
             <b>{{age}}, {{gender}}</b>
-            <br>
-            <br>
             <div>
                 {{#with address}}
                 <address>
@@ -17,16 +15,16 @@
                 </address>
                 {{/with}}
             </div>
-            <br>
             <hr>
             {{#with education.[0]}}
             <div>
                 {{>title data="Education"}}
-                <p><strong>{{major}}</strong>
+                <div><strong>{{major}}</strong>
                     <em>({{degree}})</em>
-                    <br>
+                </div>
+                <div>
                     <strong>{{graduationYear}}, {{university}}</strong>
-                </p>
+                </div>
             </div>
             <hr>
             {{/with}}
@@ -37,14 +35,14 @@
                 <div><b>{{company}},
                         <small>{{startDate}}-{{endDate}} </small>
                     </b></div>
-                <ul>
-                    <li>{{responsibilities.[0].item1}}</li>
-                    <li>{{responsibilities.[0].item2}}</li>
+                <ul class="list-group">
+                    <li class="list-group-item border-0">{{responsibilities.[0].item1}}</li>
+                    <li class="list-group-item border-0">{{responsibilities.[0].item2}}</li>
                 </ul>
                 {{>title data="About company"}}
-                <ul type="none">
-                    <li>Year of foundation: {{year_founded}}</li>
-                    <li>Industry: {{industry}}</li>
+                <ul class="list-group">
+                    <li class="list-group-item border-0">Year of foundation: {{year_founded}}</li>
+                    <li class="list-group-item border-0">Industry: {{industry}}</li>
                 </ul>
                 {{#with employees.[0]}}
                 <div>
@@ -53,89 +51,75 @@
                     </u>
                 </div>
                 {{#with projects.[0]}}
-                <ul type="none">
-                    <li>
+                <ul class="list-group">
+                    <li class="list-group-item border-0">
                         {{../name}} / {{../position}} / {{../department}}
                     </li>
                     <em> <small>
-                            <li>
+                            <li class="list-group-item border-0">
                                 {{teams.[0].team_leader.title}} of {{teams.[0].team_name}}
                             </li>
-                            <li>{{teams.[0].team_leader.email}}</li>
+                            <li class="list-group-item border-0">{{teams.[0].team_leader.email}}</li>
                     </em>
                     </small>
                 </ul>
-                <ul type="none">
-                    <li>Projects: {{name}} - {{description}} ({{status}})</li>
-                    {{#with teams.[0].team_members.[0]}}
+                <ul class="list-group border-0">
+                    <li class="list-group-item">Projects: {{name}} - {{description}} ({{status}})</li>
                 </ul>
-                <br>
-                <table cellspacing="10">
-                    <caption scope="col">
-                        TEAM MEMBER
-                    </caption>
-                    <thead>
-                        <tr>
-                            <th colspan="2">
-                                {{name}} / {{title}}
-                                <br>
-                                {{email}}
-                            </th>
-                        </tr>
-                    </thead>
-
-                    <tr>
-                        <td>
-                            Skills
-                        </td>
-                        <td>
-                            {{#each skills}}
-                            {{this}}
-                            {{/each}}
-                        </td>
-                    </tr>
-                    {{#with projects.[0]}}
-                    <tr>
-                        <td rowspan="3">
-                            Projects
-                        </td>
-                        <td>
-                            {{name}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{{description}}</td>
-                    </tr>
-                    <tr>
-                        <td>
+                {{#with teams.[0].team_members.[0]}}
+                <div class="row">
+                    <h1 class="pb-2">TEAM MEMBER</h1>
+                    <div class="col fw-bold mb-2">
+                        {{name}} / {{title}} {{email}}
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-3 pb-2 fw-bold">
+                        Skills
+                    </div>
+                    <div class="col-5">
+                        {{#each skills}}
+                        {{this}}
+                        {{/each}}
+                    </div>
+                </div>
+                {{#with projects.[0]}}
+                <div class="row">
+                    <div class="col fw-bold">
+                        Projects
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        {{name}}
+                    </div>
+                    <div class="col-5">{{description}}
+                        <div>
                             {{#each technologies}}
                             {{this}}
                             {{/each}}
-                    </tr>
-                    <tr>
-                        <td>
-                            Members
-                        </td>
-                        <td>
-                            {{#each team_members}}
-                            <table>
-                                <tr>
-                                    <td>
-                                        {{name}}/
-                                    </td>
-                                    <td>{{title}}</td>
-                                </tr>
-                            </table>
-                            {{/each}}
-                        </td>
-                    </tr>
-                    {{/with}}
-                </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col fw-bold">
+                        Members
+                    </div>
+                </div>
+                {{#each team_members}}
+                <div class="row">
+                    <div class="col-3">
+                        {{name}}
+                    </div>
+                    <div class="col-5">{{title}}</div>
+                </div>
+                {{/each}}
                 {{/with}}
                 {{/with}}
                 {{/with}}
                 {{/with}}
-            </div>
+                {{/with}}
         </section>
         {{/with}}
     </main>

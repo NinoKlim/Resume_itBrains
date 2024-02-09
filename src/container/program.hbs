@@ -12,50 +12,49 @@
         </header>
         <hr>
         <section>
-            <ol>
-                <div>
-                    {{#with program.[0]}}
-                    <li>
-                        <strong style="text-transform: uppercase">
-                            {{type}}: {{name}}
-                            <div style="text-transform: lowercase">
-                                {{duration}} hours
-                            </div>
-                        </strong>
-                        {{#with details.museum}}
-                        <p>
-                            <b>
-                                Location: {{name}}
-                            </b>
-                        <address>{{location.address}}, {{location.city}}, {{location.country}}</address>
-                        </p>
-                        <ul>
-                            {{#each exhibits}}
-                            <li>Name: {{name}}</li>
-                            {{#if artist}} <li>Artist: {{artist}}</li> {{/if}}
-                            <li>Description: {{description}}</li>
-                            {{#if audio_guide}}
-                            <li>Audio-guide: YES</li>
-                            {{/if}}
-                            <br><br>
-                            {{/each}}
-                        </ul>
-                        {{/with}}
-                        {{#with details.guide}}
-                        <div>
-                            Guide: {{name}} ({{rating}}/5)
-                            <br>
-                            Language: {{language}}
-                            <br>
+            <ul class="list-group">
+                {{#with program.[0]}}
+                <li class="list-group-item border-0">
+                    <strong style="text-transform: uppercase">
+                        {{type}}: {{name}}
+                        <div style="text-transform: lowercase">
+                            {{duration}} hours
                         </div>
-                        {{/with}}
-                    </li>
+                    </strong>
+                    {{#with details.museum}}
+                    <p>
+                        <b>
+                            Location: {{name}}
+                        </b>
+                    <address>{{location.address}}, {{location.city}}, {{location.country}}</address>
+                    </p>
+                    <ul class="list-group mb-3">
+                        {{#each exhibits}}
+                        <li class="list-group-item border-0">Name: {{name}}</li>
+                        {{#if artist}}
+                        <li class="list-group-item border-0">Artist: {{artist}}</li>
+                        {{/if}}
+                        <li class="list-group-item border-0">Description: {{description}}</li>
+                        {{#if audio_guide}}
+                        <li class="list-group-item border-0">Audio-guide: YES</li>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
                     {{/with}}
-                </div>
-                <br>
+                    {{#with details.guide}}
+                    <div>
+                        Guide: {{name}} ({{rating}}/5)
+                    </div>
+                    <div class="mb-3">
+                        Language: {{language}}
+                    </div>
+                    {{/with}}
+                </li>
+                {{/with}}
+
                 <div>
                     {{#with program.[1]}}
-                    <li>
+                    <li class="list-group-item border-0">
                         <strong style="text-transform: uppercase">
                             {{type}}: {{name}}
                             <div style="text-transform: lowercase">
@@ -70,24 +69,24 @@
                         <address>{{location.address}}, {{location.city}}, {{location.country}}</address>
                         </p>
                         {{/with}}
-                        <ol type="I">
+                        <ul class="list-group list-group-numbered">
                             {{#each details.performers }}
-                            <li>{{name}} <br> {{type}}</li>
+                            <li class="list-group-item border-0">{{name}} <br> {{type}}</li>
                             <br>
                             {{/each}}
-                        </ol>
+                        </ul>
                         {{#with details.guide}}
                         <div>
                             Guide: {{name}} ({{rating}}/5)
-                            <br>
+                        </div>
+                        <div>
                             Language: {{language}}
-                            <br>
                         </div>
                         {{/with}}
                     </li>
                     {{/with}}
                 </div>
-            </ol>
+            </ul>
             {{/with}}
         </section>
         <hr>

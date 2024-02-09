@@ -1,13 +1,69 @@
-{{!--
-Це код container файлу для index сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
---}}
-
-<h1>Hello world</h1>
-
-{{!--
-Цей код містить лише те, що буде виводитись в
-
-<body>
-    Адже наш layout/default.hbs має вже структуру HTML
-    --}}
+<main>
+    {{>title data="List of the pages"}}
+    <p>Этот проект был сделан в процессе изучения HTML5, Bootstrap и Handlebars</p>
+    <ul class="nav flex-column indexList">
+        <li class="nav-item">
+            <a href="/bio" class="btn btn-success">BIO</a>
+        </li>
+        <li class="nav-item">
+            <a href="/car" class="btn btn-outline-danger">Car</a>
+        </li>
+        <li class="nav-item">
+            <a href="/education" class="btn btn-primary">Education</a>
+        </li>
+        <li class="nav-item">
+            <a href="/facebook" class="btn btn-outline-primary">Facebook</a>
+        </li>
+        <li class="nav-item">
+            <a href="/js" class="btn btn-warning">JavaScript</a>
+        </li>
+        <li class="nav-item">
+            <a href="/mac" class="btn btn-outline-secondary">MAC</a>
+        </li>
+        <li class="nav-item">
+            <a href="/person" class="btn btn-danger">Person</a>
+        </li>
+        <li class="nav-item">
+            <a href="/program" class="btn btn-dark">Program</a>
+        </li>
+        <li class="nav-item">
+            <a href="/work" class="btn btn-outline-success">Work</a>
+        </li>
+        <li class="nav-item">
+            <a href="/web" class="btn btn-link">WEB</a>
+        </li>
+        <li class="nav-item">
+            <a href="/skills" class="btn btn-light">Skills</a>
+        </li>
+        <li class="nav-item">
+            <a href="/summary" class="btn btn-info">Summary</a>
+        </li>
+        <li class="nav-item">
+            <a href="/shopcart" class="btn btn-outline-warning">Shopcart</a>
+        </li>
+        <li class="nav-item">
+            <a href="/shopcatalog" class="btn btn-outline-dark">Shopcatalog</a>
+        </li>
+        <li class="nav-item">
+            <a href="/shophome" class="btn btn-warning text-white">Shophome</a>
+        </li>
+        <li class="nav-item">
+            <a href="/shoporder" class="btn btn-outline-success">Shoporder</a>
+        </li>
+        <li class="nav-item">
+            <a href="/shopprofile" class="btn btn-primary">Shopprofile</a>
+        </li>
+        <li class="nav-item">
+            <a href="/shopreview" class="btn btn-outline-primary">Shopreview</a>
+        </li>
+        <li class="nav-item">
+            <a href="/task21" class="btn btn-link">Tack21</a>
+        </li>
+        <li class="nav-item">
+            <a href="/task22" class="btn btn-link">Task22</a>
+        </li>
+        <li class="nav-item">
+            <a href="/task31" class="btn btn-link">Task31</a>
+        </li>
+    </ul>
+</main>
